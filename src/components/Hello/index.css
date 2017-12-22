@@ -1,0 +1,21 @@
+.base {
+  font-size: 80px;
+}
+
+.test {
+  composes: base;
+  color: yellow;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.scss {
+  composes: base;
+  composes: italic;
+}
+
+.btnContainer :global(.ant-btn) {
+  margin-top: 20px;
+}
