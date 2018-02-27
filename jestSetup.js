@@ -1,6 +1,5 @@
 const Enzyme = require('enzyme')
 const Adapter = require('enzyme-adapter-react-16')
-const config = require('./build/config/default.json')
 
 const { shallow, render, mount } = Enzyme
 
@@ -15,4 +14,4 @@ global.EnzymeMount = mount
 process.env['NODE_ENV'] = 'test'
 process.env['APP_ENV'] = 'dev'
 process.env['ENV_CONFIG'] = {}
-process.env['baseURL'] = config.dev.baseURL
+process.env['baseURL'] = 'http://rap2api.taobao.org'
