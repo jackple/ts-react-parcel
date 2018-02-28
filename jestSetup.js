@@ -13,5 +13,4 @@ global.EnzymeMount = mount
 // 设置环境变量
 process.env['NODE_ENV'] = 'test'
 process.env['APP_ENV'] = 'dev'
-process.env['ENV_CONFIG'] = {}
 process.env['baseURL'] = 'http://rap2api.taobao.org'
