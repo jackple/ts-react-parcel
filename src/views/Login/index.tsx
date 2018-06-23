@@ -1,11 +1,10 @@
 import * as React from 'react'
+import { hot } from 'react-hot-loader'
 
-export default class Login extends React.Component<{}, {}> {
+class Login extends React.Component<{}, {}> {
   render() {
-    return (
-      <div>
-        login...
-      </div>
-    )
+    return <div>login...</div>
   }
 }
+
+export default hot(module)(Login)

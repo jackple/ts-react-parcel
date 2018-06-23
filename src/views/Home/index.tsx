@@ -1,9 +1,10 @@
 import * as React from 'react'
+import { hot } from 'react-hot-loader'
 
 import Hello from './../../components/Hello'
 import World from './../../components/World'
 
-export default class Home extends React.Component<{}, {}> {
+class Home extends React.Component<{}, {}> {
   render() {
     return (
       <div>
@@ -13,3 +14,5 @@ export default class Home extends React.Component<{}, {}> {
     )
   }
 }
+
+export default hot(module)(Home)

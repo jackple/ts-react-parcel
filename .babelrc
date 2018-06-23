@@ -1,7 +1,11 @@
 {
   "plugins": [
-    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }],
-    "react-hot-loader/patch"
+    "react-hot-loader/babel",
+    "transform-class-properties",
+    [
+      "import",
+      { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }
+    ]
   ],
-   "presets": ["env", "react"]
+  "presets": ["env", "react"]
 }

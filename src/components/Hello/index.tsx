@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { inject, observer } from 'mobx-react'
-import { observable, action, runInAction, computed } from 'mobx'
+import { observable, action } from 'mobx'
 import classNames from 'classnames'
-import { Button, Icon } from 'antd'
+import { Button } from 'antd'
 
 import { ComponentExt } from './../../util/reactExt'
 import * as commonStyles from './../../styles/common.css'
@@ -18,8 +18,7 @@ interface Props {
 @observer
 export default class Hello extends ComponentExt<Props, {}> {
   // 同props一样, state也应交由mobx管理
-  @observable
-  private helleState: string = 'helleState'
+  @observable private helleState: string = 'helleState'
 
   @action
   private changeHelleState = (): void => {
@@ -30,21 +29,29 @@ export default class Hello extends ComponentExt<Props, {}> {
     const store = this.props.helloStore
     return (
       <div className={commonStyles.textCenter}>
-        <h1 className={classNames(styles.test)} onClick={this.changeHelleState}>Hello...{this.helleState}</h1>
+        <h1 className={classNames(styles.test)} onClick={this.changeHelleState}>
+          Hello...{this.helleState}
+        </h1>
         <div>
           <h1 className={styles.scss}>scss!!{store.computedTest}</h1>
         </div>
-        <Button type="primary" onClick={store.getUserInfo} loading={store.loading}>点击请求</Button>
+        <Button
+          type="primary"
+          onClick={store.getUserInfo}
+          loading={store.loading}
+        >
+          点击请求
+        </Button>
         <div className={styles.btnContainer}>
-          <Button type="danger" onClick={store.getError}>点击错误的请求</Button>
+          <Button type="danger" onClick={store.getError}>
+            点击错误的请求
+          </Button>
         </div>
-        {
-          store.loading
-            ?
-            <div id="loading">loading...</div>
-            :
-            <div id="user-info">{JSON.stringify(store.userInfo)}</div>
-        }
+        {store.loading ? (
+          <div id="loading">loading...</div>
+        ) : (
+          <div id="user-info">{JSON.stringify(store.userInfo)}</div>
+        )}
         <SvgIcon kind="stage" color="red" />
       </div>
     )
